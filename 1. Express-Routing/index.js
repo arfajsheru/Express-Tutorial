@@ -13,7 +13,7 @@ app.get("/home", (req, res) => {
     res.send("Welcom to home page");
 })
 
-// Dynamic Routing for route parameter and multipler route parameter
+// Dynamic Routing for route parameter and multiple route parameter
 //http://localhost:4000/user/50978024
 app.get("/user/:id", (req, res) => {
     const userId = req.params.id;
@@ -22,9 +22,8 @@ app.get("/user/:id", (req, res) => {
 
 //http://localhost:4000/product/Arfajsheru/542309
 app.get("/product/:category/:id", (req,res) => {
-    const userCategory = req.params.category;
-    const userId = req.params.id
-    res.send(`User Category: ${userCategory}, User Id: ${userId}`)
+    const {category, id} = req.params;
+    res.send(`User Category: ${category}, User Id: ${id}`)
 })
 
 // Query Parameter and multiple query parameter
